@@ -1,0 +1,116 @@
+[
+  {
+    "file": "Baldi_Slap0000.png",
+    "source": "https://raw.githubusercontent.com/Joalor64-Archives/BBIEAL-Decompiled/main/Assets/Texture2D/Characters/Baldi/Angry/Baldi_Slap0000.png",
+    "sha256": "54c6d439696a9a35fa282cb46331c1e8bbef4148ab17c5f7fea89a59588648b2",
+    "bytes": 6098
+  },
+  {
+    "file": "Baldi_Slap0006.png",
+    "source": "https://raw.githubusercontent.com/Joalor64-Archives/BBIEAL-Decompiled/main/Assets/Texture2D/Characters/Baldi/Angry/Baldi_Slap0006.png",
+    "sha256": "d9bb8a28d4325a4d165f6cd9fd934774d6c6839379c5ead9d8aefcd586942a5a",
+    "bytes": 6209
+  },
+  {
+    "file": "Baldi_Slap0012.png",
+    "source": "https://raw.githubusercontent.com/Joalor64-Archives/BBIEAL-Decompiled/main/Assets/Texture2D/Characters/Baldi/Angry/Baldi_Slap0012.png",
+    "sha256": "3a0670b0c5a11e6b7d9a23ce327cf042bfc5c3e9d7c6935f3839c618fb512404",
+    "bytes": 6129
+  },
+  {
+    "file": "Baldi_Slap0018.png",
+    "source": "https://raw.githubusercontent.com/Joalor64-Archives/BBIEAL-Decompiled/main/Assets/Texture2D/Characters/Baldi/Angry/Baldi_Slap0018.png",
+    "sha256": "8eb2781de2744560221be9ff207b29bf2e53ab201577483b31c22d44b7afb5d7",
+    "bytes": 5987
+  },
+  {
+    "file": "Baldi_Slap0024.png",
+    "source": "https://raw.githubusercontent.com/Joalor64-Archives/BBIEAL-Decompiled/main/Assets/Texture2D/Characters/Baldi/Angry/Baldi_Slap0024.png",
+    "sha256": "e5dc70219253aa65479741a1d4b46e61c52cab134e015af54883abeccc427e7c",
+    "bytes": 5985
+  },
+  {
+    "file": "Baldi_Wave0000.png",
+    "source": "https://raw.githubusercontent.com/Joalor64-Archives/BBIEAL-Decompiled/main/Assets/Texture2D/Characters/Baldi/Baldi_Wave0000.png",
+    "sha256": "e639c9e2cc4469bdd16f63020e6974d25ba0dd09afb33580e6116abd9b07cacb",
+    "bytes": 6796
+  },
+  {
+    "file": "Notebooks.png",
+    "source": "https://raw.githubusercontent.com/Joalor64-Archives/BBIEAL-Decompiled/main/Assets/Texture2D/SchoolHouse/Billboards/Notebooks.png",
+    "sha256": "86aa8bdc8d4460289885e2ac09c8c3d8259d3fb914b890ae6cf30e71a8fa4916",
+    "bytes": 1106
+  },
+  {
+    "file": "WhiteBrickWall.png",
+    "source": "https://raw.githubusercontent.com/Joalor64-Archives/BBIEAL-Decompiled/main/Assets/Texture2D/SchoolHouse/WallTextures/WhiteBrickWall.png",
+    "sha256": "51620fdad12c271f568b19bfa6b317e480a96994cd48561945163facd722e351",
+    "bytes": 5276
+  },
+  {
+    "file": "TileFloor.png",
+    "source": "https://raw.githubusercontent.com/Joalor64-Archives/BBIEAL-Decompiled/main/Assets/Texture2D/SchoolHouse/FloorTextures/TileFloor.png",
+    "sha256": "7fc266342270eb148ac70169e763b7825d6a19cd54acc7a6d9b369921437669a",
+    "bytes": 10123
+  },
+  {
+    "file": "Ceiling.png",
+    "source": "https://raw.githubusercontent.com/Joalor64-Archives/BBIEAL-Decompiled/main/Assets/Texture2D/SchoolHouse/Ceiling.png",
+    "sha256": "f8f61da23fd051f911cf50567882c39efeb3c7ff1db59bac09aea2a5c36a058c",
+    "bytes": 9677
+  },
+  {
+    "file": "BaldisBlackboard.png",
+    "source": "https://raw.githubusercontent.com/Joalor64-Archives/BBIEAL-Decompiled/main/Assets/Texture2D/SchoolHouse/WallTextures/Chalkboards/BaldisBlackboard.png",
+    "sha256": "7bf0a928b63bdce03ecd36dff34cd5658143bd84109e282444f114a8807014d6",
+    "bytes": 17232
+  },
+  {
+    "file": "Door_0.png",
+    "source": "https://raw.githubusercontent.com/Joalor64-Archives/BBIEAL-Decompiled/main/Assets/Texture2D/SchoolHouse/DoorTextures/Door_0.png",
+    "sha256": "8fb7a7bb806edbebc65b330d2f67f9bd9418cd9aa3131d6f31d95c4015f5fd89",
+    "bytes": 5284
+  },
+  {
+    "file": "BAL_Hi.wav",
+    "source": "https://raw.githubusercontent.com/Joalor64-Archives/BBIEAL-Decompiled/main/Assets/AudioClip/Characters/Baldi/BaldiTutor/BAL_Hi.wav",
+    "sha256": "25ba437646b679e6ceb1b4a40ae3f254c787827ece1aa92b8430b68402c60909",
+    "bytes": 262256
+  },
+  {
+    "file": "BAL_Slap.wav",
+    "source": "https://raw.githubusercontent.com/Joalor64-Archives/BBIEAL-Decompiled/main/Assets/AudioClip/Characters/Baldi/Sounds/BAL_Slap.wav",
+    "sha256": "3fb28b122dafd76ff06463d03cbd7291a1dba833693d4acd8df23e7c57bdfd41",
+    "bytes": 67628
+  },
+  {
+    "file": "BAL_Praise1.wav",
+    "source": "https://raw.githubusercontent.com/Joalor64-Archives/BBIEAL-Decompiled/main/Assets/AudioClip/Characters/Baldi/MathGame/Praises/BAL_Praise1.wav",
+    "sha256": "762e8961cda542d0b8cd8f021eea9a5a5f4c9da6921e903087762b7d940939c3",
+    "bytes": 81964
+  },
+  {
+    "file": "BAL_Screech.wav",
+    "source": "https://raw.githubusercontent.com/Joalor64-Archives/BBIEAL-Decompiled/main/Assets/AudioClip/Characters/Baldi/Sounds/BAL_Screech.wav",
+    "sha256": "6da3ae0a2dda7ad5132c800414e426349e029bee07957b989c13000cd2e69581",
+    "bytes": 184930
+  },
+  {
+    "file": "bell.wav",
+    "source": "https://raw.githubusercontent.com/Joalor64-Archives/BBIEAL-Decompiled/main/Assets/AudioClip/Sounds/Items/bell.wav",
+    "sha256": "7cd620f9d34d535f7a012bf2a231352097b26c91deffce8f641b11021384d8f6",
+    "bytes": 290860
+  },
+  {
+    "file": "BAL_Slap_Loud.wav",
+    "source": "Derived from bundled BAL_Slap.wav: tanh soft compression, drive 2.4; original preserved.",
+    "sha256": "13007800e6f8e4ed0ad241089d0262b16d9b64e5a456bcd44d528bdf5c872ec0",
+    "bytes": 67628
+  },
+  {
+    "file": "Aula_Ambience.wav",
+    "source": "Original procedural composition for Aula Cero: ventilation, 55 Hz electrical hum, distant pipe resonances; 24-second mono loop.",
+    "sha256": "cd9578539a743295896bc0e3a16b56791e3f914b010be6d397866b8edbe4b914",
+    "bytes": 1058444
+  }
+]

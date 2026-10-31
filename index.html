@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#bad94b"><meta name="description" content="Baldi’s Basics: El Aula Cero. Un fangame de terror educativo en primera persona. Cinco recuerdos. Una lección que debes aprender a fallar.">
+<title>Baldi’s Basics — El Aula Cero</title><link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='6' fill='%23bada55'/%3E%3Ctext x='16' y='49' font-size='48' font-family='monospace'%3E0%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+<canvas id="game" tabindex="0" aria-label="Escuela en primera persona. Usa WASD para moverte y E para interactuar."></canvas>
+<noscript><div class="noscript">Activa JavaScript para entrar al Aula Cero. El juego funciona sin instalar nada.</div></noscript>
+<div class="vignette" aria-hidden="true"></div><div class="scanlines" aria-hidden="true"></div>
+<header id="hud" hidden>
+ <div class="brand">BC<span>/</span>00 <small>EL AULA CERO</small></div>
+ <div class="page-count"><span id="count">0</span><i>/ 05</i><small>RECUERDOS RECUPERADOS</small></div>
+ <button id="pauseButton" class="small-button" aria-label="Pausar juego">ESC · PAUSA</button>
+ <div class="objective-status"><span id="objective">Encuentra los cinco cuadernos</span><span id="threat">BALDI ESTÁ LEJOS</span></div>
+</header>
+<main id="menu" class="screen">
+ <div class="menu-top"><span>ARCHIVO ESCOLAR / 1999</span><span class="live-dot">EXPEDIENTE REABIERTO</span></div>
+ <section class="intro">
+ <div class="eyebrow">UN FANGAME DE BALDI’S BASICS</div>
+ <h1>EL AULA<br><span>CERO<span class="period">.</span></span></h1>
+ <p class="tagline">Todos recuerdan al profesor.<br>Nadie recuerda al alumno.</p>
+ <p class="intro-copy">Vuelve a clase. Recupera cinco cuadernos.<br>Esta vez, la respuesta correcta no te salvará.</p>
+ <div class="menu-actions"><button id="start" class="primary">ENTRAR A LA ESCUELA <span>↗</span></button><button id="help" class="text-button">CÓMO SOBREVIVIR <span>+</span></button></div>
+ <div class="menu-secondary"><button id="openSettings" class="text-button">AJUSTES <span aria-hidden="true">⚙</span></button><div id="endingBadges" class="ending-badges" aria-label="Finales descubiertos"><span>0 / 2 FINALES DESCUBIERTOS</span></div></div>
+ <div class="tags"><span>PRIMERA PERSONA</span><span>2 FINALES</span><span>5–8 MIN</span></div>
+ </section>
+ <aside class="file-card"><div class="file-top">REGISTRO N.º 000 <span>CONFIDENCIAL</span></div><div class="portrait" id="portrait"></div><div class="file-caption">BALDI <span>PERSONAL DOCENTE</span></div><p>«Equivocarse es humano.<br>Recordar es un problema.»</p><div class="stamp">NO ABRIR<br>AULA 0</div></aside>
+ <footer class="menu-bottom"><span><b>ADVERTENCIA</b> · Sobresaltos visuales, sonidos repentinos y persecución.</span><span>EDICIÓN GAME JAM <em>v1.2</em></span></footer>
+</main>
+<section id="helpScreen" class="screen centered" role="dialog" aria-modal="true" aria-labelledby="helpTitle" hidden><article class="panel"><div class="eyebrow">ANTES DE QUE SUENE EL TIMBRE</div><h2 id="helpTitle">Aprende a<br><em>equivocarte.</em></h2><div class="controls-grid"><span>W A S D</span><p>Camina por la escuela</p><span>RATÓN / ← →</span><p>Mira a tu alrededor</p><span>SHIFT</span><p>Corre. Baldi te oirá.</p><span>E</span><p>Recoge, lee e interactúa</p><span>Q / J</span><p>Plano / recuerdos recuperados</p><span>M / F / ESC</span><p>Sonido / pantalla completa / pausa</p></div><p>Encuentra los cinco cuadernos y vuelve a la salida. El timbre distrae a Baldi. Dos errores abren el Aula Cero; los pasillos cambian, pero nada queda bloqueado.</p><p class="muted">El ratón se captura al hacer clic. También puedes mirar con las flechas o usar los botones táctiles del móvil. Ordenador recomendado.</p><button id="back" class="primary">ENTENDIDO <span>↵</span></button></article></section>
+<div id="crosshair" aria-hidden="true" hidden>+</div>
+<div id="interaction" hidden><kbd>E</kbd><span id="interactLabel">INTERACTUAR</span></div>
+<div id="subtitle" role="status" aria-live="polite" hidden></div>
+<div id="bottomHud" hidden><div><span>RESISTENCIA</span><div class="meter"><i id="stamina"></i></div></div><div class="noise"><span id="noiseText">PASOS SILENCIOSOS</span><div class="meter"><i id="noise"></i></div></div><div class="hud-tip">Q · PLANO <span>J · RECUERDOS</span></div></div>
+<canvas id="map" width="300" height="280" hidden aria-label="Plano de la escuela"></canvas>
+<section id="puzzle" class="screen centered" role="dialog" aria-modal="true" aria-labelledby="question" hidden><article class="notebook"><div class="notebook-head"><span>CUADERNO <b id="pageNumber">01</b> / 05</span><span class="red">NO ARRANQUES LAS HOJAS</span></div><div class="eyebrow">EJERCICIO DE RECUPERACIÓN</div><h2 id="question">7 + 3 = ?</h2><p id="puzzleHint">Contesta para recuperar el recuerdo.</p><form id="answerForm"><label for="answer">TU RESPUESTA</label><div class="answer-row"><input id="answer" autocomplete="off" inputmode="numeric" type="text" maxlength="12" required aria-label="Respuesta al ejercicio" aria-describedby="puzzleHint answerError"><button class="primary" type="submit">ENTREGAR ↵</button></div><p id="answerError" class="answer-error" role="alert" hidden></p></form><button id="cancelPuzzle" class="text-button notebook-cancel" type="button">CERRAR SIN RESPONDER <span>ESC</span></button><p class="pencil">El alumno cero escribió: «No todas las puertas se abren acertando».</p></article></section>
+<section id="loreScreen" class="screen centered" role="dialog" aria-modal="true" aria-labelledby="loreTitle" hidden><article class="panel lore-panel"><span class="eyebrow" id="loreNumber">RECUERDO 01</span><h2 id="loreTitle"></h2><p id="loreText"></p><p id="loreFeedback" class="feedback"></p><button id="continue" class="primary">GUARDAR EL RECUERDO <span>↗</span></button></article></section>
+<section id="pause" class="screen centered" role="dialog" aria-modal="true" aria-labelledby="pauseTitle" hidden><article class="panel"><div class="eyebrow">LA CLASE ESTÁ EN PAUSA</div><h2 id="pauseTitle">Un respiro.</h2><p>Baldi espera. Recupera los cinco recuerdos y vuelve a la salida, o busca el Aula Cero si has cometido dos errores.</p><button id="resume" class="primary">VOLVER A CLASE <span>↗</span></button><div class="pause-tools"><button id="pauseJournal" class="small-button">J · RECUERDOS</button><button id="pauseSettings" class="small-button">AJUSTES</button><button id="fullscreenButton" class="small-button">F · PANTALLA COMPLETA</button></div><button id="quit" class="text-button">ABANDONAR PARTIDA</button></article></section>
+<section id="ending" class="screen centered" role="dialog" aria-modal="true" aria-labelledby="endingTitle" hidden><article class="panel ending-panel"><span class="eyebrow" id="endingLabel"></span><h2 id="endingTitle"></h2><p id="endingText"></p><div class="results"><div><b id="resultTime"></b><span>TIEMPO</span></div><div><b id="resultPages"></b><span>RECUERDOS</span></div><div><b id="resultErrors"></b><span>ERRORES</span></div></div><button id="retry" class="primary">VOLVER A EMPEZAR <span>↻</span></button><button id="endingMenu" class="text-button">MENÚ PRINCIPAL</button></article></section>
+<section id="settingsScreen" class="screen centered" role="dialog" aria-modal="true" aria-labelledby="settingsTitle" hidden>
+ <article class="panel settings-panel"><div class="eyebrow">TU FORMA DE ENTRAR A CLASE</div><h2 id="settingsTitle">Ajusta el ruido.</h2>
+ <div class="setting-row"><label for="volume">Volumen <output id="volumeValue" for="volume">65%</output></label><input id="volume" type="range" min="0" max="100" value="65" step="1"><p>Voces, ambiente y efectos. M silencia durante la partida.</p></div>
+ <div class="setting-row"><label for="ambience">Ambiente <output id="ambienceValue" for="ambience">45%</output></label><input id="ambience" type="range" min="0" max="100" value="45" step="1"><p>Ventilación, zumbido eléctrico y sonidos lejanos de la escuela.</p></div>
+ <div class="setting-row"><label for="sensitivity">Sensibilidad del ratón <output id="sensitivityValue" for="sensitivity">1.0×</output></label><input id="sensitivity" type="range" min="0.5" max="2" value="1" step="0.1"></div>
+ <div class="setting-row"><label for="graphics">Calidad de imagen</label><select id="graphics"><option value="low">Baja · 480 px · mayor rendimiento</option><option value="standard" selected>Estándar · 640 px</option><option value="high">Alta · 800 px · mayor detalle</option></select></div>
+ <label class="checkbox-setting" for="reducedMotion"><input id="reducedMotion" type="checkbox"><span>Reducir movimiento y filtro de pantalla<small>Desactiva el balanceo decorativo y las líneas de monitor.</small></span></label>
+ <p class="muted">Los ajustes se guardan en este navegador.</p><button id="settingsBack" class="primary">GUARDAR Y VOLVER <span>↵</span></button></article>
+</section>
+<section id="journalScreen" class="screen centered" role="dialog" aria-modal="true" aria-labelledby="journalTitle" hidden>
+ <article class="panel journal-panel"><div class="eyebrow">REGISTRO PERSONAL / 1999</div><h2 id="journalTitle">Lo que recuerdas.</h2><p class="muted">La escuela espera mientras lees. Cada cuaderno recuperado añade una página a este expediente.</p><div id="journalEntries" class="journal-entries"><p class="journal-empty">Todavía no has recuperado ningún recuerdo.</p></div><button id="journalBack" class="primary">CERRAR EXPEDIENTE <span>↵</span></button></article>
+</section>
+<nav id="touchControls" class="touch-controls" aria-label="Controles táctiles del juego" hidden>
+ <div class="touch-move"><button type="button" data-touch="forward" aria-label="Avanzar">▲</button><button type="button" data-touch="left" aria-label="Mover a la izquierda">◀</button><button type="button" data-touch="back" aria-label="Retroceder">▼</button><button type="button" data-touch="right" aria-label="Mover a la derecha">▶</button></div>
+ <div class="touch-utility"><button type="button" data-touch="map" aria-label="Mostrar u ocultar plano">PLANO</button><button type="button" data-touch="pause" aria-label="Pausar juego">Ⅱ</button></div>
+ <div class="touch-actions"><div class="touch-look"><button type="button" data-touch="turnLeft" aria-label="Mirar a la izquierda">↶</button><button type="button" data-touch="turnRight" aria-label="Mirar a la derecha">↷</button></div><button type="button" class="touch-interact" data-touch="interact" aria-label="Interactuar">E · USAR</button><button type="button" data-touch="sprint" aria-label="Mantener para correr">CORRER</button></div>
+</nav>
+<section id="jumpscare" class="screen scare-screen" role="alert" aria-label="Baldi te ha atrapado" hidden><canvas id="scareCanvas" width="480" height="480" aria-hidden="true"></canvas><div class="scare-caption">TE ENCONTRÓ.</div></section>
+<script src="engine.js"></script><script src="game.js"></script>
+</body></html>
